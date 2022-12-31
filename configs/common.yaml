@@ -1,0 +1,7 @@
+base_directory: "."
+checkpoint: !!null
+debug: false
+seed: 42
+threads: 12
+directory: ???
+n_chunks: 4

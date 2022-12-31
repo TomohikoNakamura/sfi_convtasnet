@@ -1,0 +1,18 @@
+hydra:
+  run:
+    dir: ${base_directory}/checkpoints/${hydra.job.override_dirname}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - threads
+          - train_data
+          - validation_data
+          - checkpoint
+          - base_directory
+
+defaults:
+  - common
+  - dataset: musdb18_32000
+  - model: ???
+

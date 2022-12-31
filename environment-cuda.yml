@@ -1,0 +1,28 @@
+name: sfi
+
+channels:
+  - conda-forge
+  - nvidia
+  - intel
+  - pytorch
+
+dependencies:
+  - python = 3.9
+  - nvidia::cudatoolkit = 11.6
+  - ffmpeg >= 4.2
+  - pytorch::pytorch = 1.13
+  - pytorch::torchaudio
+  - intel::numpy
+  - pip
+  - pip:
+    - pandas
+    - simplejson
+    - pyyaml
+    - coloredlogs
+    - scipy
+    - librosa
+    - musdb
+    - museval
+    - hydra-core==0.11.3
+    - Cython
+    - tqdm

@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  sfi_convtasnet:
+    build:
+      context: sfi_docker
+      dockerfile: Dockerfile
+    command: bash
+    shm_size: 4g
+    volumes: 
+      - /home/sarulab/tomohiko_nakamura/workspace2/sfi_convtasnet_public:/opt/src
+      - /home/sarulab/tomohiko_nakamura/workspace/datasets/musdb18hq_resampled:/opt/data
+    runtime: nvidia
+    tty: true

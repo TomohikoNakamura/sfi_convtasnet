@@ -1,0 +1,50 @@
+model_type: sfi_convtasnet
+
+dissimilarity_loss_weight: 0.0
+reconstruction_loss_weight: 0.0
+similarity_loss_weight: 0.0
+loss_criterion: sisdr
+
+batch_size: 12
+epochs: 250
+clip_gradient: 5
+learning_rate: 1.0e-3
+sgdr_period: 200000
+weight_decay: 0.0005
+
+encoder_params:
+    fir_computation_type: imp_resp_samp
+    ContFilterType: TDModulatedGaussianFilters
+    use_Hilbert_transforms: false
+    filter_params:
+        train_sample_rate: ${sampling_rate}
+        init_type: erb
+        initial_freq_range: [50.0, 16000.0]
+        trainable: true
+        one_sided: false
+        init_sigma: 628.3185307179587 # 100*2.0*numpy.pi
+    nonlineartity: relu
+decoder_params:
+    fir_computation_type: imp_resp_samp
+    ContFilterType: TDModulatedGaussianFilters
+    use_Hilbert_transforms: false
+    filter_params:
+        train_sample_rate: ${sampling_rate}
+        init_type: erb
+        initial_freq_range: [50.0, 16000.0]
+        trainable: true
+        one_sided: false
+        init_sigma: 628.3185307179587 # 100*2.0*numpy.pi
+use_asteroid: false
+dropout: 0.0
+B: 160
+filters: 3
+H: 160
+kernel: 3
+L: 160
+layers: 6
+N: 440
+residual_bias: false
+stack: 2
+stages_num: 1
+W: 80
