@@ -51,23 +51,24 @@ You can setup with conda or docker.
 - Download MUSDB18-HQ dataset
 - Create training data files from wav files
   - Use `utility/data_generator.py`
-  ```bash
-  python utility/data_generator.py --musdb_path /path/to/musdb18-hq/dataset --outdir /path/to/output/dir --is_wav
-  # If --setup_file is not set, use default training/validation data split.
-  ```
+    ```bash
+    python utility/data_generator.py --musdb_path /path/to/musdb18-hq/dataset --outdir data --is_wav
+    # If --setup_file is not set, use default training/validation data split.
+    ```
+  - Trainining and validation data are created as `data/train_32` and `data/validation_32`. (32 kHz-sampled data)
   - c.f., Usage
-  ```
-  usage: data_generator.py [-h] --musdb_path MUSDB_PATH [--setup_file SETUP_FILE] --outdir OUTDIR [--n_threads N_THREADS] [--is_wav]
+    ```
+    usage: data_generator.py [-h] --musdb_path MUSDB_PATH [--setup_file SETUP_FILE] --outdir OUTDIR [--n_threads N_THREADS] [--is_wav]
 
-  optional arguments:
-    -h, --help            show this help message and exit
-    --musdb_path MUSDB_PATH
-                          Path to the MUSDB18 dataset.
-    --setup_file SETUP_FILE
-    --outdir OUTDIR
-    --n_threads N_THREADS
-    --is_wav
-  ```
+    optional arguments:
+      -h, --help            show this help message and exit
+      --musdb_path MUSDB_PATH
+                            Path to the MUSDB18 dataset.
+      --setup_file SETUP_FILE
+      --outdir OUTDIR
+      --n_threads N_THREADS
+      --is_wav
+    ```
 - Train Model (4 GPUs recommended)
   - Train model with some options (we use the hydra library)
   ```
