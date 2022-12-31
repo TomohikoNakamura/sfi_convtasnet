@@ -44,7 +44,7 @@ You can setup with conda or docker.
 ## Separating signals
 - Execute `separate_audiofile.py` as follows.
   ```bash
-  python separate_audiofile.py --model_dir /path/to/trained_model_dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output_dir
+  python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir
   ```
 
 ## Training
@@ -52,7 +52,7 @@ You can setup with conda or docker.
 - Create training data files from wav files
   - Use `utility/data_generator.py`
   ```bash
-  python utility/data_generator.py --musdb_path MUSDB_PATH --outdir OUTPUT_DIR --is_wav
+  python utility/data_generator.py --musdb_path /path/to/musdb18-hq/dataset --outdir /path/to/output/dir --is_wav
   # If --setup_file is not set, use default training/validation data split.
   ```
   - c.f., Usage
