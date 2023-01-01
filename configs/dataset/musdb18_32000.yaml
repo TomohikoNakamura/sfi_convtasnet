@@ -1,0 +1,5 @@
+sampling_rate: 32000
+shuffle_p: 0.5
+time_length: 4
+train_data: data/train
+validation_data: data/validation

@@ -1,5 +1,4 @@
 checkpoints*
-data*
 __pycache__
 *.simg
 *.makefile
