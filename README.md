@@ -5,6 +5,7 @@
 
 This repository is an official implementation of our paper entitled "Sampling-frequency-independent convolutional layer and its application to audio source separation".
 
+## Abstract
 Audio source separation is often used for the preprocessing of various tasks, and one of its ultimate goals is to construct a single versatile preprocessor that can handle every variety of audio signal. One of the most important varieties of the discrete-time audio signal is sampling frequency. Since it is usually task-specific, the versatile preprocessor must handle all the sampling frequencies required by the possible downstream tasks. However, conventional models based on deep neural networks (DNNs) are not designed for handling a variety of sampling frequencies. Thus, for unseen sampling frequencies, they may not work appropriately. In this paper, we propose sampling-frequency-independent (SFI) convolutional layers capable of handling various sampling frequencies. The core idea of the proposed layers comes from our finding that a convolutional layer can be viewed as a collection of digital filters and inherently depends on sampling frequency. To overcome this dependency, we propose an SFI structure that features analog filters and generates weights of a convolutional layer from the analog filters. By utilizing time- and frequency-domain analog-to-digital filter conversion techniques, we can adapt the convolutional layer for various sampling frequencies. As an example application, we construct an SFI version of a conventional source separation network. Through music source separation experiments, we show that the proposed layers enable separation networks to consistently work well for unseen sampling frequencies in objective and perceptual separation qualities. We also demonstrate that the proposed method outperforms a conventional method based on signal resampling when the sampling frequencies of input signals are significantly lower than the trained sampling frequency.
 
 <p align="center">
@@ -45,12 +46,18 @@ You can setup with conda or docker.
   ```
 
 ## Separating signals
-- Execute `separate_audiofile.py` as follows.
-  ```bash
-  python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir
-  ```
+- Execute `separate_audiofile.py`.
+  - Use the proposed SFI mechanism.
+    ```bash
+    python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir
+    ```
+  - Use signal resampling.
+    ```bash
+    python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir --use_signal_resampling
+    ```
 
-## Training
+# Train model
+## Training 
 - Download MUSDB18-HQ dataset
 - Create training data files from wav files
   - Use `utility/data_generator.py`
