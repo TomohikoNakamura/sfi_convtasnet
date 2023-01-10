@@ -11,7 +11,7 @@ import soundfile as sf
 import torch
 import torch.nn
 import torchaudio
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 from torch import nn
 from tqdm import tqdm
 from train import define_model
