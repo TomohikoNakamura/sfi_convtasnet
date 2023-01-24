@@ -1,18 +1,15 @@
 name: sfi
 
 channels:
-  - conda-forge
-  - nvidia
-  - intel
   - pytorch
+  - nvidia
+  - conda-forge
 
 dependencies:
-  - python = 3.9
-  - nvidia::cudatoolkit = 11.6
-  - ffmpeg >= 4.2
+  - python = 3.10
+  - pytorch::pytorch-cuda = 11.6
   - pytorch::pytorch = 1.13
   - pytorch::torchaudio
-  - intel::numpy
   - pip
   - pip:
     - pandas
