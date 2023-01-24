@@ -16,6 +16,11 @@ Audio source separation is often used for the preprocessing of various tasks, an
 
 
 # Getting started
+## Clone this repository
+```
+git clone git@github.com:TomohikoNakamura/sfi_convtasnet.git --recursive
+```
+
 ## Setup
 You can setup with conda or docker.
 
@@ -57,6 +62,7 @@ You can setup with conda or docker.
     python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir --use_signal_resampling
     ```
 - Trained models are available in `pretrained`.
+  - Remark: The trained models are not exactly the same as those used in the paper, but they show similar performances as reported in our paper. We retrained models along with refactoring this codebase. 
 
 # Train model
 ## Training 
