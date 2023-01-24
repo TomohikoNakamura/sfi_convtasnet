@@ -56,6 +56,7 @@ You can setup with conda or docker.
     ```bash
     python separate_audiofile.py --model_dir /path/to/trained/model/dir --input_files /path/to/audio/file --sample_rate 8000 --output_dir /path/to/output/dir --use_signal_resampling
     ```
+- Trained models are available in `pretrained`.
 
 # Train model
 ## Training 

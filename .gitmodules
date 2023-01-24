@@ -1,0 +1,9 @@
+[submodule "pretrained/fd_mgf"]
+	path = pretrained/fd_mgf
+	url = https://huggingface.co/tnkmr/sfi_convtasnet_fd_mgf_musdb18hq
+[submodule "pretrained/td_mgf"]
+	path = pretrained/td_mgf
+	url = https://huggingface.co/tnkmr/sfi_convtasnet_td_mgf_musdb18hq
+[submodule "pretrained/td_mpgtf"]
+	path = pretrained/td_mpgtf
+	url = https://huggingface.co/tnkmr/sfi_convtasnet_td_mpgtf_musdb18hq
